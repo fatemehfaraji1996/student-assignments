@@ -1,11 +1,6 @@
+import { fireEvent } from "@testing-library/dom/dist/events";
 import Login from "./Login";
 import { render,screen } from "@testing-library/react";
-// test('be', async () => {
-//     render(<Login/>)
-// //     const submitButton = screen.queryByText('boutten')
-// // expect(submitButton).not.toBeInTheDocument()
-//    expect()
-// })
 describe('test',()=>{
     test('test boteen tobe dom',()=>{
         render(<Login/>)
@@ -16,5 +11,11 @@ describe('test',()=>{
         render(<Login/>)
         const buttons= screen.getByRole('button')
         expect(buttons).toHaveTextContent('login')
+    })
+    test('test onclick change text',()=>{
+        render(<Login/>)
+        const buttonss= screen.getByRole('button')
+        fireEvent.click(buttonss);
+        expect(buttonss).toBeInTheDocument()
     })
 })
