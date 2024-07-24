@@ -16,6 +16,6 @@ describe('test',()=>{
         render(<Login/>)
         const buttonss= screen.getByRole('button')
         fireEvent.click(buttonss);
-        expect(buttonss).toBeInTheDocument()
+        expect(buttonss).toHaveTextContent('logout')
     })
 })
